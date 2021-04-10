@@ -1,0 +1,28 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #F3E9F1;
+}
+
+#navbarNav {
+    justify-content: flex-end;
+    padding-top: 10px;
+}
+
+#logo img {
+    width: 200px;
+    height: 85px;
+}
+.navbar-nav {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+.cart {
+    display: flex;
+}
+.fa-shopping-basket {
+    padding-top: 12px;
+}
