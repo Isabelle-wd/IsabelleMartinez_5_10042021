@@ -5,8 +5,8 @@
     font-style: normal/inherit/italic/oblique;
 }
 @font-face {
-font-family: "Edo";
-src: url("Fonts/Edo/edo.ttf");
+font-family: "littletroublegirl";
+src: url("Fonts/littletroublegirl/littletroublegirl.ttf");
 font-weight: normal/bold/inherit;
 font-style: normal/inherit/italic/oblique;
 }
@@ -39,13 +39,14 @@ body {
 /* Caroussel */
 .row p {
     width: 100%;
-    font-size: 2em;
-    font-family: Edo;
+    font-size: 3em;
+    font-family: littletroublegirl;
+    color: #8F5BFE;
     margin-top: 50px;
     margin-bottom: 50px;
 }
 #carouselExampleIndicators {
-    align-content: center;
+    margin: auto;
 }
 #carouselExampleIndicators,.carousel-item  {
     height: 400px;
