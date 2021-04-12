@@ -5,10 +5,10 @@
     font-style: normal/inherit/italic/oblique;
 }
 @font-face {
-font-family: "littletroublegirl";
-src: url("Fonts/littletroublegirl/littletroublegirl.ttf");
-font-weight: normal/bold/inherit;
-font-style: normal/inherit/italic/oblique;
+    font-family: "Brushy";
+    src: url("Fonts/Brushy/Brushy_Cre.ttf");
+    font-weight: normal/bold/inherit;
+    font-style: normal/inherit/italic/oblique;
 }
 body {
     background-color: #F3E9F1;
@@ -20,7 +20,6 @@ body {
     padding-top: 10px;
     font-weight: bold;
 }
-
 #logo img {
     width: 200px;
     height: 85px;
@@ -35,13 +34,14 @@ body {
 }
 .fa-shopping-basket {
     padding-top: 12px;
-}
-/* Caroussel */
-.row p {
-    width: 100%;
-    font-size: 3em;
-    font-family: littletroublegirl;
+    margin-right: 5px;
     color: #8F5BFE;
+}
+/* Carrousel */
+.row h1 {
+    width: 100%;
+    font-size: 2em;
+    font-family: Brushy;
     margin-top: 50px;
     margin-bottom: 50px;
 }
@@ -54,4 +54,11 @@ body {
 }  
 .carousel-item img {
     background-size: cover;
+}
+.row p {
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    color: #3f4142;
+    font-weight: bold;
 }
