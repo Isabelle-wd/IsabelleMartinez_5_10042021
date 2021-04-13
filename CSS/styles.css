@@ -1,12 +1,12 @@
 @font-face {
     font-family: "Lato";
-    src: url("Fonts/Lato/Lato-Regular.ttf");
+    src: url("/Fonts/Lato/Lato-Regular.ttf");
     font-weight: normal/bold/inherit;
     font-style: normal/inherit/italic/oblique;
 }
 @font-face {
     font-family: "Brushy";
-    src: url("Fonts/Brushy/Brushy_Cre.ttf");
+    src: url("/Fonts/Brushy/Brushy_Cre.ttf");
     font-weight: normal/bold/inherit;
     font-style: normal/inherit/italic/oblique;
 }
