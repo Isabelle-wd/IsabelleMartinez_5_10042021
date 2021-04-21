@@ -25,7 +25,7 @@ function displayArticle(article) {
     const templateElt = document.getElementById("templateArticle")
     const cloneElt = document.importNode(templateElt.content, true)
 
-    cloneElt.getElementById("imageUrl").textContent = article.imageUrl
+    cloneElt.getElementById("imageUrl").innerContent = article.imageUrl
     cloneElt.getElementById("name").textContent = article.name
     cloneElt.getElementById("description").textContent = article.description
     cloneElt.getElementById("price").textContent = article.price

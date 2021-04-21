@@ -23,6 +23,7 @@
       <li class="list-inline-item mx-5">Livraison gratuite à partir de 40€*</li>
       <li class="list-inline-item mx-5">Retour facile</li>
       <li class="list-inline-item mx-5">Paiement 100% sécurisé</li>
+      <li class="list-inline-item mx-5"><a href="mailto:contact@orinoco.fr">Contactez-nous</a></li>
     </ul>
   </div>
   <div class="container-fluid">
@@ -54,18 +55,25 @@
     </nav>
 
     <!-- Card - items -->
-
-
     <main class="main container" id="main">
       <template id="templateArticle">
         <article class="card mb-3 w-100">
           <div class="row g-0 p-2">
-            <div class="col-md-4 h-100" id="imageUrl">
-              <img src="http://localhost:3000/images/teddy_1.jpg" alt="Peluche Norbert" class="img-fluid"/>
+            <div class="col-md-4 h-100">
+              <img id="imageUrl" src="http://localhost:3000/images/teddy_1.jpg" alt="Peluche Norbert"
+                class="img-fluid" />
             </div>
             <div class="col-md-8">
               <div class="card-body px-0">
                 <h5 class="card-title font-weight-bold text-uppercase m-0" id="name">Norbert</h5>
+              </div>
+              <div class="menu-colors menu-item" id="colors">
+                <ul class="color-row">
+                  <li class="color-circle" style="background:tan" title="Tan"></li>
+                  <li class="color-circle" style="background:chocolate" title="Chocolate"></li>
+                  <li class="color-circle" style="background:black" title="Black"></li>
+                  <li class="color-circle" style="background:rgb(235, 229, 229)" title="White"></li>
+                </ul>
               </div>
               <p class="small text-muted m-0 p-0" id="description">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
@@ -75,39 +83,14 @@
                 <span class="font-weight-bold text-info mr-1" id="price">29€</span>
               </h6>
               <div class="my-2">
-                <button type="button" class="btn btn-info">Acheter</button>
+                <button type="button" class="btn btn-info"><a href="productPage.html" class="text-decoration-none text-white">Personnaliser</a></button>
               </div>
             </div>
           </div>
         </article>
       </template>
     </main>
-    <!-- <div class="row" id="row"></div>
-        <template id="templateTeddy">
-          <div class="col-12 col-sm-8 col-md-6 col-lg-4">
-            <a class="card-block stretched-link text-decoration-none" href="#">
-              <div class="card">
-                <div class="view overlay">
-                  <img class="img-fluid w-100 imageUrl" src="/images/Peluche-Norbert.jpg" alt="ourson en peluche">
-                  <a href="#!">
-                    <div class="mask rgba-white-slight"></div>
-                  </a>
-                </div>
-                <div class="card-body text-center">
-                  <h5 class="text-uppercase" id="name">Norbert</h5>
-                  <p class="small text-muted mb-2" id="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  <h6 class="mb-3">
-                    <span class="text-primary mr-1" id="price">29€</span>
-                  </h6>
-                </div>
-              </div>
-            </a>
-          </div>
-        </template>
-      </div> -->
   </div>
-
 
   <!-- Footer -->
   <footer class="page-footer font-small bg-dark text-light py-5 min-vw-100">
@@ -135,6 +118,7 @@
         </li>
       </ul>
     </div>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -146,5 +130,4 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"></script>
     <script src="/JS/items.js"></script>
-</body>
 </body>
