@@ -12,8 +12,9 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" href="/CSS/styles.css">
     <script src="https://kit.fontawesome.com/7c080a254b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <script src="/JS/productPage.js" async></script>
 </head>
 
 <body>
@@ -67,23 +68,33 @@
                         </div>
                         <div class="col-md-6">
                             <h4 class="pro-d-title card-title font-weight-bold text-uppercase" id="name"></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                            <div class="m-bot15"> <strong>Prix : </strong><span
-                                    class="pro-price text-info font-weight-bold"> 29,00€</span></div>
-                            <div class="form-group">
-                                <label>Quantité</label>
-                                <input type="quantiy" placeholder="1" class="form-control quantity">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. </p>
+                            <div class="m-bot15 mb-2"> <strong>Prix : </strong><span
+                                    class="pro-price text-info font-weight-bold"> 29,00€</span>
                             </div>
-                            <button class="btn btn-round btn-info mb-5" type="button"><i class="fa fa-shopping-cart"></i>  Ajouter au panier</button>
-                                        
-                            
+                            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                <div class="form-group btn-group mr-5" role="group">
+                                    <label class="mt-2"><strong>Quantité : </strong></label>
+                                    <input type="quantiy" placeholder="0" class="form-control quantity ml-2">
+                                </div>
+                                <select id="color" type="button" class="btn-group btn btn-sm bg-info text-light mb-2" role="group">
+                                    <option>Couleurs au choix</option>
+                                    <option value="Tan" style="background: tan">Tan</option>
+                                    <option value="Chocolate" style="background: chocolate">Chocolate</option>
+                                    <option value="Black" style="background: black">Black</option>
+                                    <option value="White" class="text-dark" style="background: white">White</option>
+                                </select>  
+                            </div>
+                            <button class="btn btn-round btn-danger my-3" type="button"><i
+                                    class="fa fa-shopping-cart"></i> Ajouter au panier</button>
                         </div>
                     </div>
                 </section>
             </div>
         </div>
         <!-- Footer -->
-        <footer class="page-footer font-small bg-dark text-light py-5 min-vw-100">
+        <footer class="page-footer font-small bg-dark text-light py-5 fixed-bottom">
             <div class="container">
                 <ul class="list-unstyled list-inline text-center">
                     <li class="list-inline-item">
@@ -122,5 +133,5 @@
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
                 integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
                 crossorigin="anonymous"></script>
-            <script src="/JS/items.js"></script>
+            
 </body>

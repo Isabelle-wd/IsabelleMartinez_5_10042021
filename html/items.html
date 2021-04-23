@@ -12,8 +12,9 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/CSS/styles.css">
   <script src="https://kit.fontawesome.com/7c080a254b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/CSS/styles.css">
+  <script src="/JS/items.js" async></script>
 </head>
 
 <body>
@@ -48,13 +49,13 @@
           </li>
           <li class="nav-item cart">
             <span class="icon"><i class="fas fa-shopping-basket"></i></span>
-            <span></span><a class="nav-link" href="#">Votre Panier</a></span>
+            <span><a class="nav-link" href="#">Votre Panier</a></span>
           </li>
         </ul>
       </div>
     </nav>
 
-    <!-- Card - items -->
+    <!-- Card - items - template -->
     <main class="main container" id="main">
       <template id="item">
         <article class="card mb-3 w-100">
@@ -65,25 +66,15 @@
             </div>
             <div class="col-md-8">
               <div class="card-body px-0">
-                <h5 class="card-title font-weight-bold text-uppercase m-0" id="name">Norbert</h5>
-              </div>
-              <div class="menu-colors menu-item" id="colors">
-                <ul class="color-row">
-                  <li class="color-circle" style="background:tan" title="Tan"></li>
-                  <li class="color-circle" style="background:chocolate" title="Chocolate"></li>
-                  <li class="color-circle" style="background:black" title="Black"></li>
-                  <li class="color-circle" style="background:rgb(235, 229, 229)" title="White"></li>
-                </ul>
+                <h5 class="card-title font-weight-bold text-uppercase m-0" id="name"></h5>
               </div>
               <p class="small text-muted m-0 p-0" id="description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.
               </p>
               <h6 class="my-3">
-                <span class="font-weight-bold text-info mr-1" id="price">29€</span>
+                <span class="font-weight-bold text-info mr-1" id="price"></span>
               </h6>
               <div class="my-2">
-                <button type="button" class="btn btn-info"><a href="productPage.html" class="text-decoration-none text-white">Personnaliser</a></button>
+                <button type="button" class="btn btn-info"><a id="link" href="" class="text-decoration-none text-white">Personnaliser</a></button>
               </div>
             </div>
           </div>
@@ -129,5 +120,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"></script>
-    <script src="/JS/items.js"></script>
+    
 </body>

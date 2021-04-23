@@ -13,9 +13,7 @@ function getArticles() {
         .then(function(response) {
             return response.json()
         })
-        .then(function(articles) {
-            return articles
-        })
+        
         .catch(function(error) {
             alert(error)
         })
@@ -28,7 +26,8 @@ function displayArticle(article) {
     cloneElt.getElementById("imageUrl").src = article.imageUrl
     cloneElt.getElementById("name").textContent = article.name
     cloneElt.getElementById("description").textContent = article.description
-    cloneElt.getElementById("price").textContent = `${article.price/100}.00€`
+    cloneElt.getElementById("price").textContent = `${article.price/100},00€`
+    cloneElt.getElementById("link").href = `/productPage.html?id=${article._id}`
 
     document.getElementById("main").appendChild(cloneElt)
 }
