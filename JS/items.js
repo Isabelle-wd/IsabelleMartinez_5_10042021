@@ -22,13 +22,13 @@ function getArticles() {
 }
 
 function displayArticle(article) {
-    const templateElt = document.getElementById("templateArticle")
+    const templateElt = document.getElementById("item")
     const cloneElt = document.importNode(templateElt.content, true)
 
-    cloneElt.getElementById("imageUrl").innerContent = article.imageUrl
+    cloneElt.getElementById("imageUrl").src = article.imageUrl
     cloneElt.getElementById("name").textContent = article.name
     cloneElt.getElementById("description").textContent = article.description
-    cloneElt.getElementById("price").textContent = article.price
+    cloneElt.getElementById("price").textContent = `${article.price/100}.00€`
 
     document.getElementById("main").appendChild(cloneElt)
 }
