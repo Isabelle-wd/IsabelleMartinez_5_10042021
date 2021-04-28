@@ -1,5 +1,5 @@
 # IsabelleMartinez_5_10042021
-Construisez un site e-commerce
+
 L'objectif principale de ce projet consiste en la création du front-end d'un site e-commerce en utilisant HTML, CSS et Javascript.
 
 L’application web est composée de 4 pages :
