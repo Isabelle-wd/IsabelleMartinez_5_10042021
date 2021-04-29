@@ -50,49 +50,59 @@
                     </li>
                     <li class="nav-item cart">
                         <span class="icon"><i class="fas fa-shopping-basket"></i></span>
-                        <span></span><a class="nav-link" href="#">Votre Panier</a></span>
+                        <span></span><a class="nav-link" href="/html/cart.html">Votre Panier</a></span>
                     </li>
                 </ul>
             </div>
         </nav>
 
-        <!--   Product - Teddy -->
-        <div class="container bootdey">
-            <div class="col-md-12">
-                <section class="panel">
-                    <div class="panel-body">
-                        <div class="col-md-6">
-                            <div class="pro-img-details">
-                                <img src="http://localhost:3000/images/teddy_1.jpg" alt="Ours en peluche">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <h4 class="pro-d-title card-title font-weight-bold text-uppercase" id="name"></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. </p>
-                            <div class="m-bot15 mb-2"> <strong>Prix : </strong><span
-                                    class="pro-price text-info font-weight-bold"> 29,00€</span>
-                            </div>
-                            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                                <div class="form-group btn-group mr-5" role="group">
-                                    <label class="mt-2"><strong>Quantité : </strong></label>
-                                    <input type="quantiy" placeholder="0" class="form-control quantity ml-2">
+        <div class="container">
+            <table id="cart" class="table table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th style="width:50%">Produit</th>
+                        <th style="width:10%">Prix</th>
+                        <th style="width:8%">Quantité</th>
+                        <th style="width:22%" class="text-center">Sous-total</th>
+                        <th style="width:10%"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-th="Product">
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <h4 class="nomargin" id="name">Product</h4>
+                                    <p id="description">Lorem </p>
                                 </div>
-                                <select id="color" type="button" class="btn-group btn btn-sm bg-info text-light mb-2" role="group">
-                                    <option>Couleurs au choix</option>
-                                    <option value="Tan" style="background: tan">Tan</option>
-                                    <option value="Chocolate" style="background: chocolate">Chocolate</option>
-                                    <option value="Black" style="background: black">Black</option>
-                                    <option value="White" class="text-dark" style="background: white">White</option>
-                                </select>  
                             </div>
-                            <button class="btn btn-round btn-danger my-3" type="button"><i
-                                    class="fa fa-shopping-cart"></i> Ajouter au panier</button>
-                        </div>
-                    </div>
-                </section>
-            </div>
+                        </td>
+                        <td data-th="Price" id="price">$5.11</td>
+                        <td data-th="Quantity">
+                            <input type="number" class="form-control text-center" value="1">
+                        </td>
+                        <td data-th="Subtotal" class="text-center">$5.11</td>
+                        <td class="actions" data-th="">
+                            <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="visible-xs">
+                        <td class="text-center"><strong>Total $ 5.11</strong></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#" class="btn btn-info"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                        <td colspan="2" class="hidden-xs"></td>
+                        <td class="hidden-xs text-center"><strong>Total $ 5.11</strong></td>
+                        <td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
         </div>
+
         <!-- Footer -->
         <footer class="page-footer font-small bg-dark text-light py-5 fixed-bottom">
             <div class="container">
@@ -133,5 +143,5 @@
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
                 integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
                 crossorigin="anonymous"></script>
-            
+
 </body>

@@ -27,7 +27,7 @@ function displayArticle(article) {
     cloneElt.getElementById("name").textContent = article.name
     cloneElt.getElementById("description").textContent = article.description
     cloneElt.getElementById("price").textContent = `${article.price/100},00€`
-    cloneElt.getElementById("link").href = `/productPage.html?id=${article._id}`
+    cloneElt.getElementById("link").href = `/product.html?id=${article._id}`
 
     document.getElementById("main").appendChild(cloneElt)
 }
