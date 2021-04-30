@@ -14,7 +14,7 @@
     <link rel="manifest" href="/site.webmanifest">
     <script src="https://kit.fontawesome.com/7c080a254b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/CSS/styles.css">
-    <script src="/JS/productPage.js" async></script>
+    <script src="" async></script>
 </head>
 
 <body>
@@ -60,8 +60,26 @@
                         <input type="tel" id="phone" class="form-control">
                     </div>
                     <div class="md-form md-outline mt-3">
-                        <label for="email" required>Addresse Email</label>
+                        <label for="email" required>Adresse Email</label>
                         <input type="email" id="email" class="form-control">
+                    </div>
+                    <div class="col-50 mt-5">
+                        <h5>Paiement par carte bancaire</h5>
+                        <label for="fname">Veuillez saisir vos informations de paiement</label>
+                        <div class="icon-container">
+                            <i class="fa fa-cc-visa" style="color:navy;"></i>
+                            <i class="fa fa-cc-amex" style="color:blue;"></i>
+                            <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                            <i class="fa fa-cc-discover" style="color:orange;"></i>
+                        </div>
+                        <label for="cname">Nom sur la carte</label>
+                        <input type="text" id="cname" name="cardname" placeholder="Mme Isabelle Martinez">
+                        <label for="ccnum">Numéro de carte</label>
+                        <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                        <label for="expmonth">Expire le</label>
+                        <input type="text" id="expmonth" name="expmonth" placeholder="01/01/2021">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="352">
                     </div>
                 </div>
             </div>
@@ -102,7 +120,7 @@
 
 
 <!-- Footer -->
-<footer class="page-footer font-small bg-dark text-light py-5 fixed-bottom">
+<footer class="page-footer font-small bg-dark text-light py-5">
     <div class="container-fluid">
         <ul class="list-unstyled list-inline text-center">
             <li class="list-inline-item">

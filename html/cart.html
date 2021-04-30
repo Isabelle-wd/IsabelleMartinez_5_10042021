@@ -24,11 +24,13 @@
             <li class="list-inline-item mx-5">Livraison gratuite à partir de 40€*</li>
             <li class="list-inline-item mx-5">Retour facile</li>
             <li class="list-inline-item mx-5">Paiement 100% sécurisé</li>
-            <li class="list-inline-item mx-5"><i class="far fa-envelope"></i><a id="contact" href="mailto:contact@orinoco.fr">Contactez-nous</a></li>
+            <li class="list-inline-item mx-5"><i class="far fa-envelope"></i><a id="contact"
+                    href="mailto:contact@orinoco.fr">Contactez-nous</a></li>
         </ul>
     </div>
+
+    <!-- Barre de navigation -->
     <div class="container-fluid">
-        <!-- Barre de navigation -->
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
             <div id="logo">
                 <a class="navbar-brand" href="/html/index.html">
@@ -56,52 +58,44 @@
             </div>
         </nav>
 
-        <div class="container">
-            <table id="cart" class="table table-hover table-condensed">
-                <thead>
-                    <tr>
-                        <th style="width:50%">Articles</th>
-                        <th style="width:10%">Prix</th>
-                        <th style="width:8%">Quantité</th>
-                        <th style="width:22%" class="text-center">Sous-total</th>
-                        <th style="width:10%"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td data-th="Product">
-                            <div class="row">
-                                <div class="col-sm-10">
-                                    <h4 class="nomargin" id="name">Name</h4>
-                                    <p id="description">Lorem </p>
-                                </div>
-                            </div>
-                        </td>
-                        <td data-th="Price" id="price">29,00</td>
-                        <td data-th="Quantity">
-                            <input type="number" class="form-control text-center" value="1">
-                        </td>
-                        <td data-th="Subtotal" class="text-center">29,00</td>
-                        <td class="actions" data-th="">
-                            <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-                        </td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr class="visible-xs">
-                        <td class="text-center"><strong>Total 29,00</strong></td>
-                    </tr>
-                    <tr>
-                        <td><a href="#" class="btn btn-info"><i class="fa fa-angle-left"></i> Continuer vos achats</a></td>
-                        <td colspan="2" class="hidden-xs"></td>
-                        <td class="hidden-xs text-center"><strong>Total $ 5.11</strong></td>
-                        <td><a href="#" class="btn btn-success btn-block" style="width: 200px">Passer la commande <i class="fa fa-angle-right"></i></a>
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
+        <!-- Shopping cart -->
+        <section class="container content-section">
+            <h2 class="section-header">Panier</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">Article</span>
+                <span class="cart-price cart-header cart-column">Prix</span>
+                <span class="cart-quantity cart-header cart-column">Quantité</span>
+            </div>
+            <div class="cart-items">
+                <div class="cart-row">
+                    <div class="cart-item cart-column">
+                        <img class="cart-item-image" src="http://localhost:3000/images/teddy_1.jpg" width="100" height="100">
+                        <span class="cart-item-title">Name</span>
+                    </div>
+                    <span class="cart-price cart-column">29,00</span>
+                    <div class="cart-quantity cart-column">
+                        <input class="cart-quantity-input" type="number" value="1">
+                        <button class="btn btn-danger" type="button"><i class="fa fa-trash-o"></i></button>
+                    </div>
+                </div>
+                <div class="cart-row">
+                    <div class="cart-item cart-column">
+                        <img class="cart-item-image" src="http://localhost:3000/images/teddy_2.jpg" width="100" height="100">
+                        <span class="cart-item-title">Name</span>
+                    </div>
+                    <span class="cart-price cart-column">30,00</span>
+                    <div class="cart-quantity cart-column">
+                        <input class="cart-quantity-input" type="number" value="2">
+                        <button class="btn btn-danger" type="button"><i class="fa fa-trash-o"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">59,00</span>
+            </div>
+            <a href="/html/checkout.html" class="btn btn-primary btn-purchase" type="button">Passer la commande</a>
+        </section>
 
         <!-- Footer -->
         <footer class="page-footer font-small bg-dark text-light py-5 fixed-bottom">
