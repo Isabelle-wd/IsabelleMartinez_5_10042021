@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Ours en peluche</title>
+    <title>Votre panier - Orinoco</title>
     <meta name="description" content="Votre peluche à personnaliser">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -14,7 +14,7 @@
     <link rel="manifest" href="/site.webmanifest">
     <script src="https://kit.fontawesome.com/7c080a254b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/CSS/styles.css">
-    <script src="/JS/productPage.js" async></script>
+    <script src="/JS/cart.js" async></script>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
             <li class="list-inline-item mx-5">Livraison gratuite à partir de 40€*</li>
             <li class="list-inline-item mx-5">Retour facile</li>
             <li class="list-inline-item mx-5">Paiement 100% sécurisé</li>
-            <li class="list-inline-item mx-5"><a href="mailto:contact@orinoco.fr">Contactez-nous</a></li>
+            <li class="list-inline-item mx-5"><i class="far fa-envelope"></i><a id="contact" href="mailto:contact@orinoco.fr">Contactez-nous</a></li>
         </ul>
     </div>
     <div class="container-fluid">
@@ -60,7 +60,7 @@
             <table id="cart" class="table table-hover table-condensed">
                 <thead>
                     <tr>
-                        <th style="width:50%">Produit</th>
+                        <th style="width:50%">Articles</th>
                         <th style="width:10%">Prix</th>
                         <th style="width:8%">Quantité</th>
                         <th style="width:22%" class="text-center">Sous-total</th>
@@ -72,16 +72,16 @@
                         <td data-th="Product">
                             <div class="row">
                                 <div class="col-sm-10">
-                                    <h4 class="nomargin" id="name">Product</h4>
+                                    <h4 class="nomargin" id="name">Name</h4>
                                     <p id="description">Lorem </p>
                                 </div>
                             </div>
                         </td>
-                        <td data-th="Price" id="price">$5.11</td>
+                        <td data-th="Price" id="price">29,00</td>
                         <td data-th="Quantity">
                             <input type="number" class="form-control text-center" value="1">
                         </td>
-                        <td data-th="Subtotal" class="text-center">$5.11</td>
+                        <td data-th="Subtotal" class="text-center">29,00</td>
                         <td class="actions" data-th="">
                             <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
                             <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
@@ -90,13 +90,13 @@
                 </tbody>
                 <tfoot>
                     <tr class="visible-xs">
-                        <td class="text-center"><strong>Total $ 5.11</strong></td>
+                        <td class="text-center"><strong>Total 29,00</strong></td>
                     </tr>
                     <tr>
-                        <td><a href="#" class="btn btn-info"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                        <td><a href="#" class="btn btn-info"><i class="fa fa-angle-left"></i> Continuer vos achats</a></td>
                         <td colspan="2" class="hidden-xs"></td>
                         <td class="hidden-xs text-center"><strong>Total $ 5.11</strong></td>
-                        <td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a>
+                        <td><a href="#" class="btn btn-success btn-block" style="width: 200px">Passer la commande <i class="fa fa-angle-right"></i></a>
                         </td>
                     </tr>
                 </tfoot>

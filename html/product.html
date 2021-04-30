@@ -24,7 +24,7 @@
             <li class="list-inline-item mx-5">Livraison gratuite à partir de 40€*</li>
             <li class="list-inline-item mx-5">Retour facile</li>
             <li class="list-inline-item mx-5">Paiement 100% sécurisé</li>
-            <li class="list-inline-item mx-5"><a href="mailto:contact@orinoco.fr">Contactez-nous</a></li>
+            <li class="list-inline-item mx-5"><i class="far fa-envelope"></i><a id="contact" href="mailto:contact@orinoco.fr">Contactez-nous</a></li>
         </ul>
     </div>
     <div class="container-fluid">
@@ -57,7 +57,7 @@
         </nav>
 
         <!--   Product - Teddy -->
-        <div class="container bootdey">
+        <div class="container bootdey vh-100">
             <div class="col-md-12">
                 <section class="panel">
                     <div class="panel-body">
@@ -73,21 +73,24 @@
                             <div class="m-bot15 mb-2"> <strong>Prix : </strong><span
                                     class="pro-price text-info font-weight-bold"> 29,00€</span>
                             </div>
-                            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                                <div class="form-group btn-group mr-5" role="group">
+                            <div class="btn-toolbar align-middle" role="toolbar" aria-label="Toolbar with button groups">
+                                <div data="Quantity" class="mr-5 mb-3 h-25" style="width: 4rem;">
+                                    <input type="number" class="form-control text-center" value="1">
+                                </div>
+                                <!-- <div class="form-group btn-group mr-5" role="group">
                                     <label class="mt-2"><strong>Quantité : </strong></label>
                                     <input type="quantiy" placeholder="0" class="form-control quantity ml-2">
-                                </div>
-                                <select id="color" type="button" class="btn-group btn btn-sm bg-info text-light mb-2" role="group">
+                                </div> -->
+                                <select id="color" type="button" class="btn-group btn bg-danger text-light mb-3 h-25 mr-5" role="group">
                                     <option>Couleurs au choix</option>
                                     <option value="Tan" style="background: tan">Tan</option>
                                     <option value="Chocolate" style="background: chocolate">Chocolate</option>
                                     <option value="Black" style="background: black">Black</option>
                                     <option value="White" class="text-dark" style="background: white">White</option>
                                 </select>  
-                            </div>
-                            <button class="btn btn-round btn-danger my-3" type="button"><i
+                                <button class="btn btn-round btn-success h-25 mb-3" type="button"><i
                                     class="fa fa-shopping-cart"></i> Ajouter au panier</button>
+                            </div>                           
                         </div>
                     </div>
                 </section>
@@ -95,7 +98,7 @@
         </div>
         <!-- Footer -->
         <footer class="page-footer font-small bg-dark text-light py-5 fixed-bottom">
-            <div class="container">
+            <div class="container-fluid">
                 <ul class="list-unstyled list-inline text-center">
                     <li class="list-inline-item">
                         <a class="btn-floating btn-fb mx-1 text-white" href="https://fr-fr.facebook.com/"
