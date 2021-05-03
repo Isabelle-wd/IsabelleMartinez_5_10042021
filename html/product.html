@@ -24,7 +24,8 @@
             <li class="list-inline-item mx-5">Livraison gratuite à partir de 40€*</li>
             <li class="list-inline-item mx-5">Retour facile</li>
             <li class="list-inline-item mx-5">Paiement 100% sécurisé</li>
-            <li class="list-inline-item mx-5"><i class="far fa-envelope"></i><a id="contact" href="mailto:contact@orinoco.fr">Contactez-nous</a></li>
+            <li class="list-inline-item mx-5"><i class="far fa-envelope"></i><a id="contact"
+                    href="mailto:contact@orinoco.fr">Contactez-nous</a></li>
         </ul>
     </div>
     <div class="container-fluid">
@@ -57,41 +58,41 @@
         </nav>
 
         <!--   Product - Teddy -->
-        <div class="container bootdey vh-100">
+        <div class="container bootdey vh-100 main">
+
             <div class="col-md-12">
                 <section class="panel">
                     <div class="panel-body">
-                        <div class="col-md-6">
-                            <div class="pro-img-details">
-                                <img src="http://localhost:3000/images/teddy_1.jpg" alt="Ours en peluche">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <h4 class="pro-d-title card-title font-weight-bold text-uppercase" id="name"></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. </p>
-                            <div class="m-bot15 mb-2"> <strong>Prix : </strong><span
-                                    class="pro-price text-info font-weight-bold"> 29,00€</span>
-                            </div>
-                            <div class="btn-toolbar align-middle" role="toolbar" aria-label="Toolbar with button groups">
-                                <div data="Quantity" class="mr-5 mb-3 h-25" style="width: 4rem;">
-                                    <input type="number" class="form-control text-center" value="1">
+                        <article id="item-data">
+                            <div class="col-md-6">
+                                <div class="pro-img-details">
+                                    <img id="imageUrl" src="http://localhost:3000/images/teddy_1.jpg" alt="Ours en peluche">
                                 </div>
-                                <!-- <div class="form-group btn-group mr-5" role="group">
-                                    <label class="mt-2"><strong>Quantité : </strong></label>
-                                    <input type="quantiy" placeholder="0" class="form-control quantity ml-2">
-                                </div> -->
-                                <select id="color" type="button" class="btn-group btn bg-danger text-light mb-3 h-25 mr-5" role="group">
-                                    <option>Couleurs au choix</option>
-                                    <option value="Tan" style="background: tan">Tan</option>
-                                    <option value="Chocolate" style="background: chocolate">Chocolate</option>
-                                    <option value="Black" style="background: black">Black</option>
-                                    <option value="White" class="text-dark" style="background: white">White</option>
-                                </select>  
-                                <button class="btn btn-round btn-success h-25 mb-3" type="button"><i
-                                    class="fa fa-shopping-cart"></i> Ajouter au panier</button>
-                            </div>                           
-                        </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="pro-d-title card-title font-weight-bold text-uppercase mt-3" id="name"></h3>
+                                <p id="description"></p>
+                                <div class="m-bot15 mb-2"> <strong>Prix : </strong><span
+                                        class="pro-price text-info font-weight-bold" id="price"></span>
+                                </div>
+                                <div class="btn-toolbar align-middle" role="toolbar"
+                                    aria-label="Toolbar with button groups">
+                                    <div data="Quantity" class="mr-5 mb-3 h-25" style="width: 4rem;">
+                                        <input type="number" class="form-control text-center" value="1">
+                                    </div>
+                                    <select id="color-option" type="button"
+                                        class="btn-group btn bg-danger text-light mb-3 h-25 mr-5" role="group">
+                                        <option>Couleurs au choix</option>
+                                        <option value="Tan" style="background: tan">Tan</option>
+                                        <option value="Chocolate" style="background: chocolate">Chocolate</option>
+                                        <option value="Black" style="background: black">Black</option>
+                                        <option value="White" class="text-dark" style="background: white">White</option>
+                                    </select>
+                                    <button class="btn btn-round btn-success h-25 mb-3 add-cart" type="button"><i
+                                            class="fa fa-shopping-cart"></i> Ajouter au panier</button>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </section>
             </div>
@@ -136,5 +137,5 @@
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
                 integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
                 crossorigin="anonymous"></script>
-            
+
 </body>
