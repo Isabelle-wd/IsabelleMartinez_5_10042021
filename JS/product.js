@@ -1,7 +1,7 @@
 (async function() {
 const productId = getProductId()
 const productData = await getProductData(productId)
-hydratePage(productData)
+cloneData(productData)
 })()
 
 function getProductId() {
@@ -17,38 +17,10 @@ function getProductData(productId) {
       .then((productData) => productData)
   }
 
-function hydratePage(article) {
-    document.getElementById("imageUrl").src = article.imageUrl
-    document.getElementById("name").textContent = article.name
-    document.getElementById("description").textContent = article.description
-    document.getElementById("price").textContent = `${article.price/100},00€`
-    /* document.getElementById("color-option")
-        .style.gridTemplateColumns = `repeat(${article.colors.length}, 1fr)` */
-    
-      // Add event listeners on button
-      document.querySelector(".add-cart").onclick = (event) => {
-        event.preventDefault()
-        Cart.addProduct(product)
-        redirectToShoppingCart(product.name)
-      }
-    
-      // Get parent element
-      const colorsElt = document.getElementById('productColors')
-    
-      // Display all colors
-      product.colors.forEach((color) => {
-        // Get & clone template for one color
-        const templateElt = document.getElementById('productColor')
-        const cloneElt = document.importNode(templateElt.content, true)
-    
-        // Hydrate color clone
-        cloneElt.querySelector('div').style.backgroundColor = color
-    
-        // Display a new color
-        colorsElt.appendChild(cloneElt)
-      })
-    }
-    
-    function redirectToShoppingCart(productName) {
-      window.location.href = `${window.location.origin}/cart.html?lastAddedProductName=${productName}`
-    }
+function cloneData(article) {
+    document.querySelector("#imageUrl").src = article.imageUrl
+    document.querySelector("#name").textContent = article.name
+    document.querySelector("#description").textContent = article.description
+    document.querySelector("#price").textContent = `${article.price/100},00€`
+    document.querySelector("color-option")= `repeat(${article.colors.length})`
+}

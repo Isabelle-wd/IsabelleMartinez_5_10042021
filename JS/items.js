@@ -23,11 +23,11 @@ function displayArticle(article) {
     const templateElt = document.getElementById("item")
     const cloneElt = document.importNode(templateElt.content, true)
 
-    cloneElt.getElementById("imageUrl").src = article.imageUrl
-    cloneElt.getElementById("name").textContent = article.name
-    cloneElt.getElementById("description").textContent = article.description
-    cloneElt.getElementById("price").textContent = `${article.price/100},00€`
-    cloneElt.getElementById("link").href = `product.html?id=${article._id}`
+    cloneElt.querySelector("#imageUrl").src = article.imageUrl
+    cloneElt.querySelector("#name").textContent = article.name
+    cloneElt.querySelector("#description").textContent = article.description
+    cloneElt.querySelector("#price").textContent = `${article.price/100},00€`
+    cloneElt.querySelector("#link").href = `product.html?id=${article._id}`
 
     document.getElementById("main").appendChild(cloneElt)
 }
