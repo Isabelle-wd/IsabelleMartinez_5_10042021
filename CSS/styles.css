@@ -119,33 +119,7 @@ body {
 }
 
 /*product list*/
-.prod-cat li a{
-    border-bottom: 1px dashed #d9d9d9;
-}
-.prod-cat li a {
-    color: #3b3b3b;
-}
-.prod-cat li ul {
-    margin-left: 30px;
-}
-.prod-cat li ul li a{
-    border-bottom:none;
-}
-.prod-cat li ul li a:hover,.prod-cat li ul li a:focus, .prod-cat li ul li.active a , .prod-cat li a:hover,.prod-cat li a:focus, .prod-cat li a.active{
-    background: none;
-    color: #ff7261;
-}
-.pro-lab{
-    margin-right: 20px;
-    font-weight: normal;
-}
-.pro-sort {
-    padding-right: 20px;
-    float: left;
-}
-.pro-page-list {
-    margin: 5px 0 0 0;
-}
+
 .product-list img{
     width: 100%;
     border-radius: 4px 4px 0 0;
@@ -154,35 +128,6 @@ body {
 .product-list .pro-img-box {
     position: relative;
 }
-.adtocart {
-    background: #fc5959;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    color: #fff;
-    display: inline-block;
-    text-align: center;
-    border: 3px solid #fff;
-    left: 45%;
-    bottom: -25px;
-    position: absolute;
-}
-.adtocart i{
-    color: #fff;
-    font-size: 25px;
-    line-height: 42px;
-}
-.pro-title {
-    color: #5A5A5A;
-    display: inline-block;
-    margin-top: 20px;
-    font-size: 16px;
-}
-.product-list .price {
-    color:#fc5959 ;
-    font-size: 15px;
-}
 .pro-img-details {
     margin-left: -15px;
 }
@@ -190,37 +135,68 @@ body {
     width: 100%;
 }
 .pro-d-title {
-    font-size: 16px;
+    font-size: 25px;
     margin-top: 0;
 }
-.product_meta {
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    padding: 10px 0;
-    margin: 15px 0;
+
+/* Color options */
+
+.color-content{
+    margin-top: 3.2rem;
 }
-.product_meta span {
-    display: block;
-    margin-bottom: 10px;
+.color-content h5{
+    font-size: 1rem;
 }
-.product_meta a, .pro-price{
-    color:#fc5959 ;
+.color{
+    width: 25px;
+    height: 25px;
+    background: none;
+    border-radius: 50%;
+    margin-right: 12px;
+    cursor: pointer;
+    transition: all 0.5s ease;
 }
-.pro-price, .amount-old {
-    font-size: 18px;
-    padding: 0 10px;
+.color-black{
+    background-color: #242424;
 }
-.amount-old {
-    text-decoration: line-through;
+.color-blue{
+    background-color: #085ea0;
 }
-.quantity {
-    width: 120px;
+.color-tan{
+    background-color: tan;
 }
-.pro-d-head {
-    font-size: 18px;
-    font-weight: 300;
+.color-pink{
+    background-color: pink;
+}
+.color-white{
+    background-color: #ededed;
+}
+.color-chocolate{
+    background-color: chocolate;
+}
+.color-pale_brown{
+    background-color: #c07f46;
+}
+.color-dark_brown{
+    background-color: #654321;
+}
+.color-brown{
+    background-color: brown;
+}
+.color-beige{
+    background-color: beige;
 }
 
+.color:hover{
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+}
+.active-color{
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+}
+.color-groups{
+    padding: 1rem 0;
+    display: flex;
+}
 /* Shopping cart */
 .cart-column {
     display: flex;

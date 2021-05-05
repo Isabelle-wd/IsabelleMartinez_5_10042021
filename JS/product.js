@@ -24,3 +24,26 @@ function cloneData(article) {
     document.querySelector("#price").textContent = `${article.price/100},00€`
     document.querySelector("color-option")= `repeat(${article.colors.length})`
 }
+document.getElementById('add-cart').onclick = (event) => {
+  event.preventDefault()
+  Cart.addProduct(product)
+  redirectToShoppingCart(product.name)
+}
+
+const COLOR_BTNS = document.querySelectorAll('.color');
+COLOR_BTNS.forEach(color => {
+    color.addEventListener('click', () => {
+        let colorNameClass = color.className;
+        if(!color.classList.contains('active-color')){
+            let colorName = colorNameClass.slice(colorNameClass.indexOf('-') + 1, colorNameClass.length);
+            resetActiveBtns();
+            color.classList.add('active-color');
+            setNewColor(colorName)
+        }
+    });
+})
+
+
+/* function redirectToShoppingCart(productName) {
+window.location.href = `${window.location.origin}/cart.html?lastAddedProductName=${productName}` */
+
