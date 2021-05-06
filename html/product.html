@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <!-- <link rel="manifest" href="/site.webmanifest"> -->
     <script src="https://kit.fontawesome.com/7c080a254b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/CSS/styles.css">
     <script src="/JS/product.js" async></script>
@@ -20,11 +20,11 @@
 <body>
     <div class="container-fluid bg-dark text-light">
         <ul class="list-inline list-unstyled text-center">
-            <li class="list-inline-item mx-5">Fabriqué en France</li>
-            <li class="list-inline-item mx-5">Livraison gratuite à partir de 40€*</li>
-            <li class="list-inline-item mx-5">Retour facile</li>
-            <li class="list-inline-item mx-5">Paiement 100% sécurisé</li>
-            <li class="list-inline-item mx-5"><i class="far fa-envelope"></i><a id="contact"
+            <li class="list-inline-item mx-4">Fabriqué en France</li>
+            <li class="list-inline-item mx-4">Livraison gratuite à partir de 40€*</li>
+            <li class="list-inline-item mx-4">Retour facile</li>
+            <li class="list-inline-item mx-4">Paiement 100% sécurisé</li>
+            <li class="list-inline-item mx-4"><i class="far fa-envelope"></i><a id="contact"
                     href="mailto:contact@orinoco.fr">Contactez-nous</a></li>
         </ul>
     </div>
@@ -59,55 +59,37 @@
 
         <!--   Product - Teddy -->
         <div class="container bootdey vh-100 main">
-
             <div class="col-md-12">
                 <section class="panel">
                     <div class="panel-body">
                         <article id="item-data">
                             <div class="col-md-6">
                                 <div class="pro-img-details">
-                                    <img id="imageUrl" src="http://localhost:3000/images/teddy_1.jpg" alt="Ours en peluche">
+                                    <img id="imageUrl" src="http://localhost:3000/images/teddy_1.jpg"
+                                        alt="Ours en peluche">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <h3 class="pro-d-title card-title font-weight-bold text-uppercase mt-3" id="name"></h3>
                                 <p id="description" class="text-muted"></p>
-                                <div class="m-bot15 mb-2"> <strong>Prix : </strong><span
+                                <div class="m-bot15 text-muted mb-2"> <strong>Prix : </strong><span
                                         class="pro-price text-info font-weight-bold" id="price"></span>
-                                </div>                                                                  
-                                <div data="Quantity" class="mr-5 mb-3 h-25" style="width: 4rem;">
-                                    <input type="number" min="0" max="10" class="form-control text-center" value="1">
                                 </div>
-                                <div class = "color-content mt-1 text-muted">
-                                    <h5>Couleurs au choix :</h5>
-                                        <div class = "color-groups">
-                                          <div class = "color color-white active-color" title="white"></div>
-                                          <div class = "color color-black" title="black"></div>
-                                          <div class = "color color-tan" title="tan"></div>
-                                          <div class = "color color-blue" title="blue"></div>
-                                          <div class = "color color-pink" title="pink"></div>
-                                          <div class = "color color-chocolate" title="chocolate"></div>
-                                          <div class = "color color-pale_brown" title="pale brown"></div>
-                                          <div class = "color color-dark_brown" title="dark brown"></div>
-                                          <div class = "color color-beige" title="beige"></div>
-                                          <div class = "color color-brown" title="brown"></div>
-                                        </div>
+                                <form id="form" data="Quantity" class="mr-5 mb-3 h-25" style="width: 4rem;">
+                                    <input id="quantity" type="number" class="form-control text-center" min="1" max="10" value="1">
+                                </form>
+                                <div class="color-content mt-1 text-muted">
+                                    <label id="label" for="color-options" class="mr-2">Couleurs au choix :</label>
+                                    <select id="colorOptions" type="button"
+                                        class="btn bg-info text-light mb-3 h-25 mr-5">
+                                        <template id="teddyColor">
+                                            <option value="tan" selected>tan</option>
+                                        </template>
+                                    </select>
                                 </div>
-                                    <!-- <select id="color-option" type="button" class="btn-group btn bg-dark text-light mb-3 h-25 mr-5" role="group">
-                                        <option value="Tan" style="background: tan">Tan</option>
-                                        <option value="Chocolate" style="background: chocolate">Chocolate</option>
-                                        <option value="Black" style="background: black">Black</option>
-                                        <option value="White" class="text-dark" style="background: white">White</option>
-                                        <option value="White" class="text-dark" style="background: #c07f46 ">Pale brown</option>
-                                        <option value="White" class="text-dark" style="background: #654321">Dark brown</option>
-                                        <option value="White" class="text-dark" style="background: brown">Brown</option>
-                                        <option value="White" class="text-dark" style="background: beige">Beige</option>
-                                        <option value="White" class="text-dark" style="background: blue">Blue</option>
-                                        <option value="White" class="text-dark" style="background: pink">Pink</option>
-                                    </select> -->
-                                    <button class="btn btn-round btn-success h-25 mb-3 addtocart" type="button">
-                                        <i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
-                                
+                                <button id="addToCart" class="btn btn-round btn-success h-25 mb-3" type="submit">
+                                    <i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
+
                             </div>
                         </article>
                     </div>

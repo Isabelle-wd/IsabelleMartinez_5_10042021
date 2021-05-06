@@ -1,49 +1,84 @@
-(async function() {
-const productId = getProductId()
-const productData = await getProductData(productId)
-cloneData(productData)
-})()
+const url = 'http://localhost:3000/api/teddies/';
+let teddyId = "";
 
-function getProductId() {
-return new URL(window.location.href).searchParams.get('id')
+async function getData() {
+    let response = await fetch(url + teddyId);
+
+    if (response.status === 200) {
+        return data = await response.json();
+    }
 }
 
-function getProductData(productId) {
-    return fetch(`http://localhost:3000/api/teddies/${productId}`)
-      .catch((error) => {
-        console.log(error)
-      })
-      .then((Response) => Response.json())
-      .then((productData) => productData)
-  }
+teddyId = location.search.substring(4);
 
-function cloneData(article) {
-    document.querySelector("#imageUrl").src = article.imageUrl
-    document.querySelector("#name").textContent = article.name
-    document.querySelector("#description").textContent = article.description
-    document.querySelector("#price").textContent = `${article.price/100},00€`
-    document.querySelector("color-option")= `repeat(${article.colors.length})`
-}
-document.getElementById('add-cart').onclick = (event) => {
-  event.preventDefault()
-  Cart.addProduct(product)
-  redirectToShoppingCart(product.name)
-}
+// Clone product data
+async function productPage() {
+  teddy = await getData();
 
-const COLOR_BTNS = document.querySelectorAll('.color');
-COLOR_BTNS.forEach(color => {
-    color.addEventListener('click', () => {
-        let colorNameClass = color.className;
-        if(!color.classList.contains('active-color')){
-            let colorName = colorNameClass.slice(colorNameClass.indexOf('-') + 1, colorNameClass.length);
-            resetActiveBtns();
-            color.classList.add('active-color');
-            setNewColor(colorName)
+  let image = document.querySelector("#imageUrl");
+  let name = document.querySelector("#name");
+  let description = document.querySelector("#description");
+  let price = document.querySelector("#price");
+  let quantity = document.querySelector("#quantity"); 
+  let select = document.querySelector("#colorOptions");
+  let button = document.querySelector("#addToCart");
+  let colors = teddy.colors;
+
+  name.textContent = teddy.name;
+  description.textContent = teddy.description;
+  price.textContent = (Math.round(teddy.price) / 100).toFixed(2) + " €";
+  image.src = teddy.imageUrl;
+
+  for (let i = 0; i < colors.length; i++) {
+    let option = document.createElement("option");
+    option.value = colors[i];
+    option.innerHTML = colors[i];
+    select.appendChild(option);
+  }   
+  
+  let cart = [];
+
+  button.addEventListener("click", function (event) {
+    event.preventDefault()
+  if (quantity.checkValidity() === true) {
+    let product = {
+      _id: teddy._id,
+      image: teddy.imageUrl,
+      name: teddy.name,
+      price: teddy.price,
+      quantity: parseInt(quantity.value),
+      color: select.value,
+    };
+
+    let other = true;
+    if (localStorage.getItem("shoppingCart") === null) {
+      cart.push(product);
+      localStorage.setItem("shoppingCart", JSON.stringify(cart));
+      alert(
+        `Vous avez ajouté ${product.quantity} "${product.name}" à votre panier`
+      );
+    } else {
+      cart = JSON.parse(localStorage.getItem("shoppingCart"));
+      for (let item of cart) {
+        if (item._id === product._id && item.color === product.color) {
+          item.quantity = product.quantity;
+          autreProduit = false;
         }
-    });
-})
+      }
+      if (other) cart.push(product);
+      localStorage.setItem("shoppingCart", JSON.stringify(cart));
+      alert(
+        `Vous avez ajouté ${product.quantity} "${product.name}" à votre panier`
+      );
+    }
+  }
+}
+);
+}
+
+productPage();
 
 
-/* function redirectToShoppingCart(productName) {
-window.location.href = `${window.location.origin}/cart.html?lastAddedProductName=${productName}` */
+
+
 

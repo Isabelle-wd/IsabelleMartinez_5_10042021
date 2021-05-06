@@ -139,64 +139,8 @@ body {
     margin-top: 0;
 }
 
-/* Color options */
 
-.color-content{
-    margin-top: 3.2rem;
-}
-.color-content h5{
-    font-size: 1rem;
-}
-.color{
-    width: 25px;
-    height: 25px;
-    background: none;
-    border-radius: 50%;
-    margin-right: 12px;
-    cursor: pointer;
-    transition: all 0.5s ease;
-}
-.color-black{
-    background-color: #242424;
-}
-.color-blue{
-    background-color: #085ea0;
-}
-.color-tan{
-    background-color: tan;
-}
-.color-pink{
-    background-color: pink;
-}
-.color-white{
-    background-color: #ededed;
-}
-.color-chocolate{
-    background-color: chocolate;
-}
-.color-pale_brown{
-    background-color: #c07f46;
-}
-.color-dark_brown{
-    background-color: #654321;
-}
-.color-brown{
-    background-color: brown;
-}
-.color-beige{
-    background-color: beige;
-}
 
-.color:hover{
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
-}
-.active-color{
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
-}
-.color-groups{
-    padding: 1rem 0;
-    display: flex;
-}
 /* Shopping cart */
 .cart-column {
     display: flex;
@@ -279,6 +223,5 @@ body {
 .btn-purchase {
     display: block;
     width: 200px;
-    margin: 40px auto 80px auto;
-    
+    margin: 40px auto 80px auto; 
 }

@@ -9,12 +9,3 @@ for(let i = 0; i < removeCartItemsButtons.length; i++) {
     })
 }
 
-/* function updateCartTotal() {
-    let cartItemContainer = document.getElementsByClassName("cart-items")[0]
-    let cartRows = cartItemContainer.getElementsByClassName("cart-row")
-    for (let i = 0; i < cartRows.length; i++) {
-        let priceElement = cartRow.getElementsByClassName("cart-price")[0]
-        let quantityElement = cartRow.getElementsByClassName("cart-quantity-input")[0]
-        let price = priceElement.innerText
-    }
-} */
