@@ -139,8 +139,6 @@ body {
     margin-top: 0;
 }
 
-
-
 /* Shopping cart */
 .cart-column {
     display: flex;
@@ -225,3 +223,6 @@ body {
     width: 200px;
     margin: 40px auto 80px auto; 
 }
+
+/* Information */
+
