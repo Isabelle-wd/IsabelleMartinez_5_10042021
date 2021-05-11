@@ -48,7 +48,7 @@ else{
 const removeCartItemButtons = document.getElementsByClassName("btn-danger")
 for (let i = 0; i < removeCartItemButtons.length; i++) {
     const button = removeCartItemButtons[i]
-    button.addEventListener('click', function(event){
+    button.addEventListener("click", function(event){
         const buttonClicked = event.target
         cart.splice(button.dataset.id,1) // enlève produit du localStorage
         buttonClicked.parentElement.parentElement.parentElement.remove()
@@ -58,21 +58,44 @@ for (let i = 0; i < removeCartItemButtons.length; i++) {
     })}
 
     
+
+// Chercher les prix dans le panier
+let totalCalcs = []
+
+for (let i = 0; i < cart.length; i++){
+    itemsPrice = cart[i].price/100
+    totalCalcs.push(itemsPrice)
+    console.log(totalCalcs)
+}
+
+// Additionner les prix
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+let totalAmount = totalCalcs.reduce(reducer,0);
+console.log(totalAmount);
+
+function totalPerItem(){
+    const itemQuantity = document.querySelector(".cart-quantity-input")
+    let itemPrice = document.querySelector(".cart-price")
+    let itemTotalPrice = itemQuantity * itemPrice
+    
+}
+
+
 ////// RIEN NE MARCHE
 // mise à jour du Total
-function updateCartTotal(){
-    const cartItemContainer = document.getElementsByClassName("cart-items")[0]
+/* async function updateCartTotal(){
+    const cartItemContainer = document.getElementsByClassName("container-cart")
     const cartRows = cartItemContainer.getElementsByClassName("cart-row")
     let total = 0
     for (let i = 0; i < cartRows.length; i++) {
         const cartRow = cartRows[i]
-        const priceElement = CartRow.getElementsByClassName("cart-price")[0]
-        const quantityElement = cartRow.getElementsByClassName("cart-quantity-input")[0]
+        const priceElement = cartRow.getElementsByClassName("cart-price")
+        const quantityElement = cartRow.getElementsByClassName("cart-quantity-input")
         const price = parseFloat(priceElement.innerText.replace("€",""))
         const quantity = quantityElement.nodeValue
         total = total + (price * quantity)
     }
-    document.getElementsByClassName("cart-total-price")[0].innerText = total + `€`
-}
+    document.getElementsByClassName("cart-total-price").innerText = total + `€`
+} */
 
 
