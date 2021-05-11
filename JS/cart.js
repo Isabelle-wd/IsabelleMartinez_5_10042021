@@ -1,6 +1,8 @@
+/// Récupération de l'URL API
 let cart = JSON.parse(localStorage.getItem("shoppingCart"));
 console.log(cart);
 
+/// Position du produit
 const cartElement = document.querySelector("#cartItems");
 console.log(cartElement);
 
@@ -30,9 +32,9 @@ else{
                             <span id="colorOptions" class="cart-item-color mx-2">${cart[i].color}</span>
                         </div>
                     </div>
-                    <span class="cart-price cart-column">${cart[i].price/100}€ </span>
+                    <span id="price" class="cart-price shop-price cart-column">${cart[i].price/100},00 €</span>
                     <div class="cart-quantity cart-column">
-                        <input class="cart-quantity-input" min="1" type="number" value="${cart[i].quantity}">
+                        <input id="quantity" class="cart-quantity-input" min="1" type="number" value="${cart[i].quantity}">
                         <button class="btn btn-danger" type="button" data-id="${i}"><i class="fa fa-trash-o"></i></button>
                     </div>
                 </div>
@@ -44,58 +46,98 @@ else{
             cartElement.innerHTML = basket; 
     }}
 
-// supprimer un article du panier    
-const removeCartItemButtons = document.getElementsByClassName("btn-danger")
-for (let i = 0; i < removeCartItemButtons.length; i++) {
-    const button = removeCartItemButtons[i]
-    button.addEventListener("click", function(event){
-        const buttonClicked = event.target
-        cart.splice(button.dataset.id,1) // enlève produit du localStorage
-        buttonClicked.parentElement.parentElement.parentElement.remove()
-        updateCartTotal()
-        localStorage.setItem("shoppingCart", JSON.stringify(cart))
-        window.location.reload()
-    })}
+// Supprimer un article (une ligne)
+let removeButton = document.querySelectorAll(".btn-danger");
+console.log(removeButton);
 
-    
+for(let i = 0; i < removeButton.length; i++) {
+    let button = removeButton[i]
+    button.addEventListener("click", function(event){
+    let buttonClicked = event.target;   
+    cart.splice(button.dataset.id,1); // enlève produit du localStorage
+    buttonClicked.parentElement.parentElement.parentElement.remove()
+    // updateCartTotal()
+    localStorage.setItem("shoppingCart", JSON.stringify(cart))
+    window.location.reload()
+})}        
 
 // Chercher les prix dans le panier
 let totalCalcs = []
-
 for (let i = 0; i < cart.length; i++){
-    itemsPrice = cart[i].price/100
+    itemsPrice = cart[i].price/100;
     totalCalcs.push(itemsPrice)
-    console.log(totalCalcs)
+    console.log(totalCalcs);
 }
 
 // Additionner les prix
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 let totalAmount = totalCalcs.reduce(reducer,0);
-console.log(totalAmount);
+console.log(totalAmount);   
 
-function totalPerItem(){
-    const itemQuantity = document.querySelector(".cart-quantity-input")
-    let itemPrice = document.querySelector(".cart-price")
-    let itemTotalPrice = itemQuantity * itemPrice
-    
-}
+// Afficher le total
+const cartElement2 = document.querySelector("#cardBody");
+console.log(cartElement2);
+let totalOrder = [];
+totalOrder = `
+<div class="col-lg-4 mt-5 mb-5">
+<div id="cardBody" class="mb-4">
+    <form id="box" class="card-body">
+        <h5 class="mb-3">Vérification et validation</h5>
+        <ul class="list-group list-group-flush">
+            <li
+                class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                Sous-total
+                <span>${totalAmount},00€</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                Livraison
+                <span>Gratuit</span>
+            </li>
+            <li
+                class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                <div>
+                    <strong>Montant total</strong>
+                </div>
+                <span><strong>${totalAmount},00€</strong></span>
+            </li>
+        </ul>
+        <button type="button" id="purchaseButton"
+            class="btn btn-primary btn-block waves-effect waves-light">Acheter</button>
+    </form>
+</div>
+</div>`;
+cartElement2.innerHTML = totalOrder;  
 
 
-////// RIEN NE MARCHE
-// mise à jour du Total
-/* async function updateCartTotal(){
-    const cartItemContainer = document.getElementsByClassName("container-cart")
-    const cartRows = cartItemContainer.getElementsByClassName("cart-row")
-    let total = 0
-    for (let i = 0; i < cartRows.length; i++) {
-        const cartRow = cartRows[i]
-        const priceElement = cartRow.getElementsByClassName("cart-price")
-        const quantityElement = cartRow.getElementsByClassName("cart-quantity-input")
-        const price = parseFloat(priceElement.innerText.replace("€",""))
-        const quantity = quantityElement.nodeValue
-        total = total + (price * quantity)
+/// Formulaires
+const purchaseButton = document.getElementById("purchaseButton")
+let products = [];
+purchaseButton.addEventListener(click, function(){
+    debugger;
+
+    let contact = {
+        firstName: document.getElementById("firstname").value,
+        lastName: document.getElementById("lastname").value,
+        address: document.getElementById("address").value,
+        postalCode: document.getElementById("cp").value,
+        city: document.getElementById("city").value,
+        phone: document.getElementById("phone").value,
+        email: document.getElementById("email").value
     }
-    document.getElementsByClassName("cart-total-price").innerText = total + `€`
-} */
+    
+    for  (let teddy of cart) {
+        products.push(teddy._id);
+    }
+    let placeOrder = JSON.stringify({contact, products});
+
+    
+
+}
+)
+
+
+
+
+
 
 

@@ -11,7 +11,7 @@ async function getData() {
 
 teddyId = location.search.substring(4);
 
-// Clone product data
+// Cloner les données du produit
 async function productPage() {
   teddy = await getData();
 
@@ -26,7 +26,7 @@ async function productPage() {
 
   name.textContent = teddy.name;
   description.textContent = teddy.description;
-  price.textContent = (Math.round(teddy.price) / 100).toFixed(2) + " €";
+  price.textContent = (Math.round(teddy.price) / 100).toFixed(2) + "€";
   image.src = teddy.imageUrl;
 
   for (let i = 0; i < colors.length; i++) {
@@ -45,7 +45,7 @@ async function productPage() {
       _id: teddy._id,
       image: teddy.imageUrl,
       name: teddy.name,
-      price: teddy.price,
+      price: teddy.price * parseInt(quantity.value),
       quantity: parseInt(quantity.value),
       color: select.value,
     };

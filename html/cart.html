@@ -83,13 +83,13 @@
                     </form>
                 </div>
             </div>
-            <div class="cart-total">
+            <!-- <div class="cart-total">
                 <strong class="cart-total-title">Total</strong>
                 <span class="cart-total-price">0</span>
-            </div>
+            </div> -->
             <!-- <a href="/html/checkout.html" id="purchase" class="btn btn-primary btn-purchase" type="button">Passer la commande</a> -->
         </section>
-        <section class="container-info row mb-5 mx-2 pb-5">
+        <section id="infoForm" class="container-info row mb-5 mx-2 pb-5">
             <div class="col-lg-8 mt-5">
                 <div class="card pb-1">
                     <div class="card-body">
@@ -172,8 +172,8 @@
 
             <!-- Validation -->
             <div class="col-lg-3 mt-5 mb-5">
-                <div class="card mb-4">
-                    <div class="card-body">
+                <div id="cardBody" class="card mb-4">
+                    <div id="box" class="card-body">
                         <h5 class="mb-3">Vérification et validation</h5>
                         <ul class="list-group list-group-flush">
                             <li
@@ -193,7 +193,7 @@
                                 <span><strong>29,00</strong></span>
                             </li>
                         </ul>
-                        <button type="button"
+                        <button type="button" id="purchaseButton"
                             class="btn btn-primary btn-block waves-effect waves-light">Acheter</button>
                     </div>
                 </div>
