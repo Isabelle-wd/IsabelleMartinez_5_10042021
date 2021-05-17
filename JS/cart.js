@@ -8,7 +8,7 @@ console.log(cartElement);
 
 let basket = [];
 
-// afficher que le panier est vide
+/// Afficher que le panier est vide
 if(cart === null || cart.length === 0) {
 const emptyCart = 
     `<div>Votre panier est vide</div>`
@@ -16,7 +16,7 @@ const emptyCart =
     cartElement.innerHTML = emptyCart;
 }
 
-// afficher article dans le panier
+/// Afficher article dans le panier
 else{
     for (i = 0; i < cart.length; i++) {
 
@@ -44,7 +44,9 @@ else{
     }
         if(i == cart.length) {
             cartElement.innerHTML = basket; 
-    }}
+        }
+}
+
 
 // Supprimer un article (une ligne)
 let removeButton = document.querySelectorAll(".btn-danger");
@@ -56,12 +58,11 @@ for(let i = 0; i < removeButton.length; i++) {
     let buttonClicked = event.target;   
     cart.splice(button.dataset.id,1); // enlève produit du localStorage
     buttonClicked.parentElement.parentElement.parentElement.remove()
-    // updateCartTotal()
     localStorage.setItem("shoppingCart", JSON.stringify(cart))
     window.location.reload()
 })}        
 
-// Chercher les prix dans le panier
+/// Chercher les prix dans le panier
 let totalCalcs = []
 for (let i = 0; i < cart.length; i++){
     itemsPrice = cart[i].price/100;
@@ -69,72 +70,188 @@ for (let i = 0; i < cart.length; i++){
     console.log(totalCalcs);
 }
 
-// Additionner les prix
+/// Additionner les prix
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 let totalAmount = totalCalcs.reduce(reducer,0);
 console.log(totalAmount);   
 
-// Afficher le total
+/// Afficher le total
 const cartElement2 = document.querySelector("#cardBody");
 console.log(cartElement2);
 let totalOrder = [];
 totalOrder = `
-<div class="col-lg-4 mt-5 mb-5">
-<div id="cardBody" class="mb-4">
-    <form id="box" class="card-body">
-        <h5 class="mb-3">Vérification et validation</h5>
-        <ul class="list-group list-group-flush">
-            <li
-                class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                Sous-total
-                <span>${totalAmount},00€</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                Livraison
-                <span>Gratuit</span>
-            </li>
-            <li
-                class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
-                <div>
-                    <strong>Montant total</strong>
-                </div>
-                <span><strong>${totalAmount},00€</strong></span>
-            </li>
-        </ul>
-        <button type="button" id="purchaseButton"
-            class="btn btn-primary btn-block waves-effect waves-light">Acheter</button>
-    </form>
-</div>
-</div>`;
+    <div id="cardBody" class="mb-4">
+        <form id="box" class="card-body">
+            <h5 class="mb-3">Vérification et validation</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                    Sous-total
+                    <span>${totalAmount},00€</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                    Livraison
+                    <span>Gratuit</span>
+                </li>
+                <li
+                    class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                    <div>
+                        <strong>Montant total</strong>
+                    </div>
+                    <span><strong>${totalAmount},00€</strong></span>
+                </li>
+            </ul>
+            <button type="button" id="purchaseButton"
+                class="btn btn-primary btn-block waves-effect waves-light">Acheter</button>
+        </form>
+    </div>`;
 cartElement2.innerHTML = totalOrder;  
 
+const confirmOrder = document.getElementById("purchaseButton");
 
-/// Formulaires
-const purchaseButton = document.getElementById("purchaseButton")
-let products = [];
-purchaseButton.addEventListener(click, function(){
-    debugger;
+confirmOrder.addEventListener('click', (event) => {
+    event.preventDefault();
 
-    let contact = {
-        firstName: document.getElementById("firstname").value,
-        lastName: document.getElementById("lastname").value,
-        address: document.getElementById("address").value,
-        postalCode: document.getElementById("cp").value,
-        city: document.getElementById("city").value,
-        phone: document.getElementById("phone").value,
-        email: document.getElementById("email").value
-    }
-    
-    for  (let teddy of cart) {
-        products.push(teddy._id);
-    }
-    let placeOrder = JSON.stringify({contact, products});
+/// -------------- Formulaire - Informations perso ------------------------------------///
 
-    
-
+// Récupérer des données du formulaire
+const contactDetails = {
+    lastName : document.getElementById("lastName").value,
+    firstName : document.getElementById("firstName").value,
+    address : document.getElementById("address").value,
+    cp : document.getElementById("cp").value,
+    city : document.getElementById("city").value,
+    email : document.getElementById("email").value  
 }
-)
 
+// Paramètres du Formulaire
+const regexNames_City = (value) => { // le nom de famille, le prénom et la ville
+    return /^[A-Za-z]{2,20}$/.test(value);
+}
+const textAlert = (value) => {
+    return `${value}: Les chiffres et symboles ne sont pas autorisés! \n Ne pas dépasser 20 caractères!`
+}
+function checkLastName(){ 
+    const lastNameValidity = contactDetails.lastName;
+    if (regexNames_City(lastNameValidity)) {
+        return true;
+    } else {
+        alert(textAlert ("Nom"));
+        return false;
+    }
+}
+function checkFirstName(){ 
+    const firstNameValidity = contactDetails.firstName;
+    if (regexNames_City(firstNameValidity)) {
+        return true;
+    } else {
+        alert(textAlert ("Prénom"));
+        return false;
+    }
+}
+function checkCity(){ 
+    const cityValidity = contactDetails.city;
+    if (regexNames_City(cityValidity)) {
+        return true;
+    } else {
+        alert(textAlert ("Ville"));
+        return false;
+    }
+}
+
+const regexCp = (value) => { // le code postal
+    return /^(?:[0-8]\d|9[0-8])\d{3}$/.test(value);
+}
+function checkCp(){ 
+    const cpValidity = contactDetails.cp;
+    if (regexCp(cpValidity)) {
+        return true;
+    } else {
+        alert("Code postal doit comporter 5 chiffres");
+        return false;
+    }
+}
+
+const regexEmail = (value) => { // l'email
+    return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(value);
+}
+function checkEmail(){ 
+    const emailValidity = contactDetails.email;
+    if (regexEmail(emailValidity)) {
+        return true;
+    } else {
+        alert("Votre adresse email n'est pas valide!");
+        return false;
+    }
+}
+if (checkLastName() && checkFirstName() && checkCp() && checkCity() && checkEmail()){
+// Mettre les données du formulaire dans le localStorage
+localStorage.setItem("contactDetails", JSON.stringify(contactDetails));
+
+delete contactDetails.cp;
+const sendOrder = {
+    products : cart.map((product) => product._id),
+    contact : contactDetails
+};
+sendDataOff(sendOrder);
+
+} else {
+    alert("Veuillez vérifier les informations indiquées dans le formulaire");
+};
+
+
+});
+
+
+// Envoyer les données avec une requête POST
+function sendDataOff(sendOrder) {
+    const promise = fetch("http://localhost:3000/api/teddies/order", {
+        method: "POST",
+        headers: {
+            "Accept" : "application/json",
+            "Content-Type": "application/json",
+        },      
+        body: JSON.stringify(sendOrder),    
+        mode: "cors",
+                                     
+    });
+promise.then(async(response) => {
+    try{
+        const content = await response.json();
+        console.log(content);
+
+        if(response.ok){
+            console.log(`Résultat de response.ok : ${response.ok}`);
+            console.log("OrderId");
+            console.log(content.orderId); // récupération de l'id de commande
+            localStorage.setItem("responseId", content.orderId); // mise de l'id dans le localStorage
+            window.location = "conf.html";
+        } 
+        else{
+            console.log(`Réponse du serveur : ${response.status}`)
+            alert(`Problème avec le serveur : erreur ${response.status}`)
+        };
+    }
+    catch(e){
+        console.log(e);
+    };
+})                
+}
+
+// Remplir le formulaire automatiquement
+
+const dataLocalStorage = localStorage.getItem("contactDetails");//prendre la clé dans le localStorage
+const dataLocalStorageObject = JSON.parse(dataLocalStorage);// convertir en objet JS
+
+// Mettre les données du localStorage dans le formulaire
+function addData(input){
+    document.querySelector(`#${input}`).value = dataLocalStorageObject[input];
+};
+addData("lastName");
+addData("firstName");
+addData("address");
+addData("cp");
+addData("city");
+addData("email");
 
 
 

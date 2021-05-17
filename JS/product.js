@@ -1,4 +1,4 @@
-const url = 'http://localhost:3000/api/teddies/';
+const url = "http://localhost:3000/api/teddies/";
 let teddyId = "";
 
 async function getData() {
