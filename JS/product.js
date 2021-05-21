@@ -55,7 +55,7 @@ async function productPage() {
       cart.push(product);
       localStorage.setItem("shoppingCart", JSON.stringify(cart));
       alert(
-        `Vous avez ajouté ${product.quantity} "${product.name}" à votre panier`
+        `Vous avez ajouté ${product.quantity} "${product.name}" de couleur ${product.color} à votre panier`
       );
     } else {
       cart = JSON.parse(localStorage.getItem("shoppingCart"));
@@ -68,7 +68,7 @@ async function productPage() {
       if (other) cart.push(product);
       localStorage.setItem("shoppingCart", JSON.stringify(cart));
       alert(
-        `Vous avez ajouté ${product.quantity} "${product.name}" à votre panier`
+        `Vous avez ajouté ${product.quantity} "${product.name}" de couleur ${product.color} à votre panier`
       );
     }
   }
