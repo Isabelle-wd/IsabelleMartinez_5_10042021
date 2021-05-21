@@ -1,5 +1,4 @@
 const responseId = localStorage.getItem("responseId");
-console.log(`responseId : ${responseId}`);
 
 const confElement = document.querySelector("#confElement");
 const confStructure = `
@@ -13,7 +12,7 @@ const confStructure = `
 confElement.innerHTML = confStructure;
 
 function emptyConfPage(key) {
-    localStorage.removeItem(key);
+	localStorage.removeItem(key);
 };
 emptyConfPage("responseId");
 emptyConfPage("shoppingCart");
