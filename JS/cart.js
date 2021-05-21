@@ -62,6 +62,7 @@ for(let i = 0; i < removeButton.length; i++) {
     window.location.reload()
 })}        
 
+
 /// Chercher les prix dans le panier
 let totalCalcs = []
 for (let i = 0; i < cart.length; i++){
@@ -123,7 +124,7 @@ const contactDetails = {
     email : document.getElementById("email").value  
 }
 
-// Paramètres du Formulaire
+// Paramètres du Formulaire --- Validité des données
 const regexNames_City = (value) => { // le nom de famille, le prénom et la ville
     return /^[A-Za-z]{2,20}$/.test(value);
 }
@@ -184,8 +185,8 @@ function checkEmail(){
     }
 }
 if (checkLastName() && checkFirstName() && checkCp() && checkCity() && checkEmail()){
-// Mettre les données du formulaire dans le localStorage
-localStorage.setItem("contactDetails", JSON.stringify(contactDetails));
+
+localStorage.setItem("contactDetails", JSON.stringify(contactDetails)); // Mettre les données du formulaire dans le localStorage
 
 delete contactDetails.cp;
 const sendOrder = {
