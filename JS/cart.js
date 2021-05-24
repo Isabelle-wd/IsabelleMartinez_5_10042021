@@ -31,7 +31,7 @@ else {
                     </div>
                     <span id="price" class="cart-price shop-price cart-column">${cart[i].price/100},00 €</span>
                     <div class="cart-quantity cart-column">
-                        <input id="quantity" class="cart-quantity-input" min="1" type="number" value="${cart[i].quantity}">
+                        <span id="quantity" class="cart-quantity-input" min="1" type="number">${cart[i].quantity}</span>
                         <button class="btn btn-danger" type="button" data-id="${i}"><i class="fa fa-trash-o"></i></button>
                     </div>
                 </div>
