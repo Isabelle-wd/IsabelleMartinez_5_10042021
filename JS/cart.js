@@ -44,7 +44,6 @@ else {
 
 }
 
-
 // Supprimer un article (une ligne)
 let removeButton = document.querySelectorAll(".btn-danger");
 
@@ -58,7 +57,6 @@ for (let i = 0; i < removeButton.length; i++) {
 		window.location.reload()
 	})
 }
-
 
 /// Chercher les prix dans le panier
 let totalCalcs = []
@@ -119,44 +117,38 @@ confirmOrder.addEventListener('click', (event) => {
 	}
 
 	// Paramètres du Formulaire --- Validité des données
-	const regexString = (value) => { // le nom de famille, le prénom et la ville
+	function regexString(value) { // le nom de famille, le prénom et la ville
 		return /^[A-Za-z]{2,20}$/.test(value);
 	}
-	const alertString = (value) => {
-		return `${value}: Les chiffres et symboles ne sont pas autorisés! \n Ne pas dépasser 20 caractères!`
-	}
-
 	function checkLastName() {
 		const lastNameValidity = contactDetails.lastName;
 		if (regexString(lastNameValidity)) {
 			return true;
 		} else {
-			alert(alertString("Nom"));
+			alert("N'oubliez pas de renseigner votre nom de famille. Celui-ci ne doit comporter que des lettres.");
 			return false;
 		}
 	}
-
 	function checkFirstName() {
 		const firstNameValidity = contactDetails.firstName;
 		if (regexString(firstNameValidity)) {
 			return true;
 		} else {
-			alert(alertString("Prénom"));
+			alert("N'oubliez pas de renseigner votre prénom. Celui-ci ne doit comporter que des lettres.");
 			return false;
 		}
 	}
-
 	function checkCity() {
 		const cityValidity = contactDetails.city;
 		if (regexString(cityValidity)) {
 			return true;
 		} else {
-			alert(alertString("Ville"));
+			alert("N'oubliez pas de renseigner votre ville. Celle-ci ne doit comporter que des lettres.");
 			return false;
 		}
 	}
 
-	const regexCp = (value) => { // le code postal
+	function regexCp(value) { // le code postal
 		return /^(?:[0-8]\d|9[0-8])\d{3}$/.test(value);
 	}
 
@@ -165,12 +157,12 @@ confirmOrder.addEventListener('click', (event) => {
 		if (regexCp(cpValidity)) {
 			return true;
 		} else {
-			alert("Code postal doit comporter 5 chiffres");
+			alert("N'oubliez pas de renseigner votre code postal. Celui-ci doit comporter 5 chiffres.");
 			return false;
 		}
 	}
 
-	const regexEmail = (value) => { // l'email
+	function regexEmail(value) { // l'email
 		return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(value);
 	}
 
@@ -196,6 +188,7 @@ confirmOrder.addEventListener('click', (event) => {
 
 	} else {
 		alert("Veuillez vérifier les informations indiquées dans le formulaire");
+		return false;
 	};
 
 
@@ -217,7 +210,6 @@ function sendDataOff(sendOrder) {
 	promise.then(async(response) => {
 		try {
 			const content = await response.json();
-			console.log(content);
 
 			if (response.ok) {
 				console.log(`Résultat de response.ok : ${response.ok}`);

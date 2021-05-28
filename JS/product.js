@@ -11,7 +11,7 @@ async function getData() {
 
 teddyId = location.search.substring(4);
 
-// Cloner les données du produit
+/// Cloner les données du produit
 async function productPage() {
 	teddy = await getData();
 

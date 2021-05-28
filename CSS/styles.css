@@ -202,6 +202,14 @@ body {
 .cart-row:last-child .cart-column {
     border: none;
 }
+#asterix {
+    font-size: 0.8em;
+}
+.required-field::after {
+    content: "*";
+    color: red;
+    font-weight: bold;
+}
 
 
 

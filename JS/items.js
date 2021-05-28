@@ -1,5 +1,6 @@
 main()
 
+/// Chargement de la page
 async function main() {
 	const articles = await getArticles()
 
@@ -7,7 +8,7 @@ async function main() {
 		displayArticle(article)
 	}
 }
-
+/// Récupère les articles
 function getArticles() {
 	return fetch("http://localhost:3000/api/teddies")
 		.then(function (response) {
@@ -18,10 +19,10 @@ function getArticles() {
 			alert(error)
 		})
 }
-
+/// Affiche les articles
 function displayArticle(article) {
 	const templateElt = document.getElementById("item")
-	const cloneElt = document.importNode(templateElt.content, true)
+	const cloneElt = document.importNode(templateElt.content, true) // Clone l'élément html
 
 	cloneElt.querySelector("#imageUrl").src = article.imageUrl
 	cloneElt.querySelector("#name").textContent = article.name
