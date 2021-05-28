@@ -17,3 +17,5 @@ Tester le site en local
 Installer : Node.js et NPM
 
 Exécuter : npm install puis node server
+
+Exécuter npm start à chaque démarrage pour être sur le port 3000 (localhost)
