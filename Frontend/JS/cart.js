@@ -190,8 +190,6 @@ confirmOrder.addEventListener('click', (event) => {
 		alert("Veuillez vérifier les informations indiquées dans le formulaire");
 		return false;
 	};
-
-
 });
 
 
