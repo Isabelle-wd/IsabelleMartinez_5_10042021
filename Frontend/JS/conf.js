@@ -7,7 +7,7 @@ const confStructure = `
     <p>Le numéro de votre commande est : ${responseId}</p>
     <hr>
     <p>Vous avez des questions? <a id="contact" href="mailto:contact@orinoco.fr">Contactez-nous</a></p>       
-    <p class="lead"><a class="btn btn-info btn-md mt-5" href="/html/index.html" role="button">Retour à la page d'accueil</a></p>`;
+    <p class="lead"><a class="btn btn-info btn-md mt-5" href="index.html" role="button">Retour à la page d'accueil</a></p>`;
 
 confElement.innerHTML = confStructure;
 
